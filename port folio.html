@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        /* --- GLOBAL STYLES --- */
+        :root {
+            --bg: #ffffff;
+            --text: #2d3436;
+            --accent: #0984e3;
+            --light-gray: #f9f9f9;
+        }
+
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            scroll-behavior: smooth; /* This makes the "page" jumping smooth */
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            color: var(--text); 
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 10%;
+            background: rgba(255, 255, 255, 0.95);
+            position: fixed; /* Stays at the top while scrolling */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2rem; }
+        nav ul li a { 
+            text-decoration: none; 
+            color: var(--text); 
+            font-weight: 600; 
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: var(--accent); }
+
+        /* Section Layout */
+        section {
+            padding: 100px 10%; /* Extra top padding so nav doesn't cover titles */
+            min-height: 100vh; /* Each "page" takes up the full screen height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Home Section */
+        #home { background-color: var(--bg); }
+        .hero h1 { font-size: 4rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; color: #636e72; }
+
+        /* Projects Section */
+        #projects { background-color: var(--light-gray); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+
+        /* Contact Section */
+        #contact { background-color: var(--bg); }
+        form { 
+            max-width: 600px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 1rem; 
+            margin-top: 2rem;
+        }
+        input, textarea {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+        }
+        input:focus, textarea:focus { border-color: var(--accent); }
+
+        .btn {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            width: fit-content;
+        }
+
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            background: #2d3436; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MY.PORTFOLIO</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <h1>Hello, <br>I'm a Developer.</h1>
+        <p>I build clean and functional web applications using modern technologies. Scroll down to see my work!</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Java Application</h3>
+                <p>A desktop application built with Swing and NetBeans for data management.</p>
+            </div>
+            <div class="card">
+                <h3>Reservation System</h3>
+                <p>A full-stack project using JDBC and MySQL for booking management.</p>
+            </div>
+            <div class="card">
+                <h3>Database Dashboard</h3>
+                <p>Integrating MongoDB aggregation to display real-time metrics.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p>Feel free to reach out for collaborations or just a friendly hello!</p>
+        <form action="#">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message..."></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Developer Portfolio • All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
